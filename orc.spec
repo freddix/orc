@@ -2,12 +2,12 @@
 
 Summary:	The Oil Runtime Compiler
 Name:		orc
-Version:	0.4.18
+Version:	0.4.19
 Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://code.entropywave.com/download/orc/%{name}-%{version}.tar.gz
-# Source0-md5:	1a2552e8d127526c48d644fe6437b377
+Source0:	http://gstreamer.freedesktop.org/src/orc/%{name}-%{version}.tar.gz
+# Source0-md5:	2cacea6271aade6d592fe1622a136f19
 Patch0:		%{name}-build.patch
 URL:		http://code.entropywave.com/projects/orc/
 BuildRequires:	autoconf
@@ -62,6 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -82,8 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liborc-%{apiver}.so
 %attr(755,root,root) %{_libdir}/liborc-*-%{apiver}.so
 %{_includedir}/orc-%{apiver}
-%{_libdir}/liborc-%{apiver}.la
-%{_libdir}/liborc-*-%{apiver}.la
 %{_aclocaldir}/*.m4
 %{_pkgconfigdir}/orc-%{apiver}.pc
 
