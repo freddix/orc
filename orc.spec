@@ -3,7 +3,7 @@
 Summary:	The Oil Runtime Compiler
 Name:		orc
 Version:	0.4.19
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://gstreamer.freedesktop.org/src/orc/%{name}-%{version}.tar.gz
